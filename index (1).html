@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FREE USDT</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- TELEGRAM WEB APP SCRIPT -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- আপনার দেওয়া CSS কোড অপরিবর্তিত রাখা হয়েছে -->
+    <style>
+        :root {
+            --font-main: 'Poppins', sans-serif;
+            --light-bg: #e9eaf1; --light-card-bg: #ffffff; --light-text: #2c3a47; --light-text-secondary: #57606f; --light-border: #d1d8e0; --light-accent: #4a69bd; --light-accent-rgb: 74, 105, 189; --light-accent-gradient: linear-gradient(135deg, #4a69bd, #6a89cc); --light-success: #2ecc71; --light-shadow-soft: rgba(74, 105, 189, 0.1); --light-shadow-medium: rgba(74, 105, 189, 0.15); --light-error: #e74c3c;
+            --dark-bg: #1a1c28; --dark-card-bg: #24273a; --dark-text: #e0e7ff; --dark-text-secondary: #a0a8c0; --dark-border: #363a52; --dark-accent: #8258fa; --dark-accent-rgb: 130, 88, 250; --dark-accent-gradient: linear-gradient(135deg, #8258fa, #a55eea); --dark-success: #00e676; --dark-shadow-soft: rgba(0, 0, 0, 0.2); --dark-shadow-medium: rgba(0, 0, 0, 0.3); --dark-error: #ff6b6b;
+            --neumorph-shadow-light-outer: -5px -5px 10px var(--light-card-bg), 5px 5px 10px #caced4; --neumorph-shadow-dark-outer: -5px -5px 10px #2e324a, 5px 5px 10px #1c1f2e; --neumorph-shadow-light-inner: inset -3px -3px 7px var(--light-card-bg), inset 3px 3px 7px #caced4; --neumorph-shadow-dark-inner: inset -3px -3px 7px #2e324a, inset 3px 3px 7px #1c1f2e;
+            --bg-color: var(--light-bg); --card-bg-color: var(--light-card-bg); --text-color: var(--light-text); --text-secondary-color: var(--light-text-secondary); --border-color: var(--light-border); --accent-color: var(--light-accent); --accent-color-rgb: var(--light-accent-rgb); --accent-gradient: var(--light-accent-gradient); --success-color: var(--light-success); --shadow-soft: var(--light-shadow-soft); --shadow-medium: var(--light-shadow-medium); --neumorph-shadow-outer: var(--neumorph-shadow-light-outer); --neumorph-shadow-inner: var(--neumorph-shadow-light-inner); --error-color: var(--light-error);
+        }
+        body.dark-mode {
+            --bg-color: var(--dark-bg); --card-bg-color: var(--dark-card-bg); --text-color: var(--dark-text); --text-secondary-color: var(--dark-text-secondary); --border-color: var(--dark-border); --accent-color: var(--dark-accent); --accent-color-rgb: var(--dark-accent-rgb); --accent-gradient: var(--dark-accent-gradient); --success-color: var(--dark-success); --shadow-soft: var(--dark-shadow-soft); --shadow-medium: var(--dark-shadow-medium); --neumorph-shadow-outer: var(--neumorph-shadow-dark-outer); --neumorph-shadow-inner: var(--neumorph-shadow-dark-inner); --error-color: var(--dark-error);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding-bottom: 110px; overflow-x: hidden; }
+        .app-container { width: 100%; max-width: 480px; display: flex; flex-direction: column; flex-grow: 1; position: relative; }
+        .top-banner { width: 100%; height: 160px; background-image: url('https://i.ibb.co/Y4xz43FM/1000069672.jpg'); background-size: cover; background-position: center; position: relative; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 0 4px 15px var(--shadow-soft); }
+        .theme-toggle-btn { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.3); backdrop-filter: blur(3px); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; display: flex; justify-content: center; align-items: center; z-index: 10; transition: background-color 0.3s, transform 0.2s; }
+        .theme-toggle-btn:hover { background: rgba(0,0,0,0.5); transform: scale(1.1); }
+        .profile-cover-section { background-color: var(--card-bg-color); margin: -60px 20px 15px 20px; border-radius: 16px; padding: 20px; padding-top: 70px; text-align: center; position: relative; box-shadow: 0 5px 20px var(--shadow-medium); border: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease; }
+        .profile-pic-container { position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; border-radius: 50%; border: 4px solid var(--accent-color); background-color: var(--card-bg-color); padding: 4px; box-shadow: 0 3px 10px var(--shadow-soft); }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; cursor: pointer; }
+        .profile-name { font-size: 1.4em; font-weight: 600; color: var(--text-color); margin-bottom: 3px; letter-spacing: 0.5px; display: inline-flex; align-items: center; }
+        .verified-profile-icon { color: var(--accent-color); font-size: 0.8em; margin-left: 6px; vertical-align: middle; }
+        .user-points { font-size: 1.2em; font-weight: 500; color: var(--success-color); margin-top: 5px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background-color: rgba(var(--accent-color-rgb), 0.1); border-radius: 20px; }
+        .user-points i { color: var(--success-color); }
+        .user-ad-stats { font-size: 0.85em; color: var(--text-secondary-color); margin-top: 8px; }
+        .main-content { padding: 0 15px 15px 15px; flex-grow: 1; z-index: 1; }
+        .task-card { background-color: var(--card-bg-color); border-radius: 12px; padding: 20px; margin-bottom: 18px; box-shadow: var(--neumorph-shadow-outer); border: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .task-card h2 { font-size: 1.25em; font-weight: 600; color: var(--text-color); margin-bottom: 15px; display: flex; align-items: center; letter-spacing: 0.3px; }
+        .task-card h2 i:not(.verified-profile-icon) { margin-right: 12px; color: var(--accent-color); font-size: 1.3em; text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.3); }
+        .task-card p { font-size: 0.95em; color: var(--text-secondary-color); margin-bottom: 18px; line-height: 1.6; }
+        .task-button { display: block; width: 100%; padding: 14px; background: var(--accent-gradient); color: white; border: none; border-radius: 10px; font-size: 1.05em; font-weight: 500; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.3s ease; text-align: center; text-decoration: none; box-shadow: 0 4px 10px rgba(var(--accent-color-rgb), 0.25); }
+        .task-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 6px 15px rgba(var(--accent-color-rgb), 0.35); }
+        .task-button:disabled { background: var(--border-color); color: var(--text-secondary-color); opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
+        .channel-list { list-style: none; padding: 0; }
+        .channel-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 5px; border-bottom: 1px solid var(--border-color); transition: background-color 0.2s; }
+        .channel-item:last-child { border-bottom: none; }
+        .channel-item:hover { background-color: rgba(var(--accent-color-rgb), 0.05); }
+        .channel-info { display: flex; align-items: center; flex-grow: 1; }
+        .channel-info i { color: var(--accent-color); font-size: 1.4em; margin-right: 15px; min-width: 25px; text-align: center;}
+        .channel-name { font-size: 1em; color: var(--text-color); }
+        .channel-join-btn { padding: 7px 14px; font-size: 0.85em; font-weight: 500; background-color: var(--accent-color); color: white; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background-color 0.2s, transform 0.1s; white-space: nowrap; }
+        .channel-join-btn:hover { background-color: rgba(var(--accent-color-rgb), 0.85); transform: scale(1.03); }
+        .channel-join-btn.visited { background-color: var(--success-color); pointer-events: none; opacity: 0.8; }
+        .bottom-fixed-area { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; display: flex; flex-direction: column; align-items: center; }
+        .developer-footer { width: 100%; max-width: 480px; padding: 8px 0; text-align: center; font-size: 0.8em; color: var(--text-secondary-color); background-color: var(--card-bg-color); border-top: 1px solid var(--border-color); z-index: 1000; }
+        .developer-footer a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+        .developer-footer .verified-icon { color: #1877f2; font-size: 0.9em; margin-left: 3px; }
+        .developer-footer .trophy-icon { color: gold; margin-left: 3px; }
+        .bottom-nav { width: 100%; max-width: 480px; background-color: var(--card-bg-color); display: flex; justify-content: space-around; padding: 10px 0; box-shadow: 0 -3px 15px var(--shadow-soft); border-top: 1px solid var(--border-color); z-index: 1000; transition: background-color 0.3s ease, border-color 0.3s ease; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary-color); text-decoration: none; font-size: 0.75em; font-weight: 500; padding: 5px; flex: 1; transition: color 0.2s, transform 0.2s; }
+        .nav-item i { font-size: 1.8em; margin-bottom: 4px; }
+        .nav-item.active { color: var(--accent-color); transform: translateY(-3px); }
+        .nav-item:hover { color: var(--accent-color); }
+        .ad-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(var(--dark-bg-rgb, 26, 28, 40), 0.7); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .ad-modal-overlay.show { display: flex; opacity: 1; }
+        .ad-modal-content { background-color: var(--card-bg-color); padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 8px 30px var(--shadow-medium); width: 90%; max-width: 380px; transform: scale(0.95); transition: transform 0.3s ease-in-out; }
+        .ad-modal-overlay.show .ad-modal-content { transform: scale(1); }
+        .ad-modal-content p { font-size: 1.05em; margin-bottom: 18px; color: var(--text-color); }
+        .ad-modal-content #adStatusMessage{ font-weight: 500; min-height: 22px; font-size: 0.95em; }
+        .ad-close-btn { margin-top: 20px; padding: 12px 25px; background: var(--accent-gradient); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1em; font-weight: 500; transition: transform 0.2s, box-shadow 0.2s; }
+        .ad-close-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(var(--accent-color-rgb),0.3); }
+        .spinner { border: 4px solid rgba(var(--accent-color-rgb), 0.2); border-left-color: var(--accent-color); border-radius: 50%; width: 35px; height: 35px; animation: spin 0.8s linear infinite; margin: 0 auto 15px auto; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .withdraw-input, .withdraw-select { width: 100%; padding: 12px 15px; margin-bottom: 12px; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); font-size: 1em; box-shadow: var(--neumorph-shadow-inner); transition: border-color 0.3s, box-shadow 0.3s; }
+        .withdraw-input::placeholder, .withdraw-select option[value=""] { color: var(--text-secondary-color); opacity: 0.8; }
+        .withdraw-input:focus, .withdraw-select:focus { outline: none; border-color: var(--accent-color); box-shadow: var(--neumorph-shadow-inner), 0 0 0 2px rgba(var(--accent-color-rgb), 0.2); }
+        .ad-placeholder { margin: 10px 15px; padding: 5px; background-color: var(--card-bg-color); border-radius: 8px; box-shadow: var(--shadow-soft); display: flex; justify-content: center; align-items: center; min-height: 60px; overflow: hidden; border: 1px solid var(--border-color); text-align: center; display: none; }
+        .ad-placeholder iframe { max-width: 100%; }
+        #loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 9999; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 20px; }
+        #loading-overlay p { font-size: 1.2em; color: var(--text-color); }
+        .warning-popup { position: fixed; bottom: 120px; left: 50%; transform: translateX(-50%); background-color: var(--error-color); color: white; padding: 12px 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 5000; cursor: pointer; font-size: 0.9em; font-weight: 500; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0.5s; animation: slideUp 0.5s ease forwards; }
+        .warning-popup.show { opacity: 1; visibility: visible; }
+        @keyframes slideUp { from { transform: translate(-50%, 20px); } to { transform: translate(-50%, 0); } }
+        /* Referral Page Styles */
+        .referral-link-container { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        #referralLinkInput { flex-grow: 1; padding: 10px; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--bg-color); color: var(--text-secondary-color); font-size: 0.9em; }
+        .copy-btn { padding: 10px 15px; font-size: 1em; background-color: var(--accent-color); color: white; border: none; border-radius: 8px; cursor: pointer; }
+        .referral-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-top: 20px; }
+        .stat-box { background-color: rgba(var(--accent-color-rgb), 0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); }
+        .stat-box .stat-value { font-size: 1.5em; font-weight: 600; color: var(--accent-color); }
+        .stat-box .stat-label { font-size: 0.9em; color: var(--text-secondary-color); margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Connecting to server...</p>
+    </div>
+
+    <div class="app-container" style="display: none;">
+        <div class="top-banner">
+            <button class="theme-toggle-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+        </div>
+
+        <div class="profile-cover-section">
+            <div class="profile-pic-container">
+                <img src="https://i.ibb.co/sdc6JgCm/1000069673.jpg" alt="Profile" class="profile-pic" id="profilePic">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <h1 class="profile-name" id="profileNameDisplay">Loading User...</h1>
+            </div>
+            <p class="user-points" id="userPointsDisplay"><i class="fas fa-star"></i> 0 Points</p>
+            <p class="user-ad-stats" id="userAdStatsDisplay">Total Ads Watched: 0</p>
+        </div>
+        
+        <div class="ad-placeholder" id="ad-slot-banner-top"></div>
+        <div class="ad-placeholder" id="ad-slot-native-banner"></div>
+
+        <div id="dynamic-notice-area" style="padding: 0 15px; margin-bottom: 15px; display: none;"></div>
+
+        <div class="main-content" id="mainContent"></div>
+        
+        <div class="bottom-fixed-area">
+            <div class="ad-placeholder" id="ad-slot-banner-bottom" style="margin-bottom: 0; max-width: 480px; width:100%; border-radius: 0;"></div>
+            <div class="developer-footer">
+                Developer: <a href="#" id="developerFooterDynamicLink" target="_blank">𝐇𝐀𝐒𝐎𝐍 𝐑𝐀𝐉𝐀 <i class="fas fa-check-circle verified-icon"></i><i class="fas fa-trophy trophy-icon"></i></a>
+            </div>
+            <div class="bottom-nav">
+                <a href="#" class="nav-item active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
+                <a href="#" class="nav-item" data-page="tasks"><i class="fas fa-tasks"></i><span>Tasks</span></a>
+                <a href="#" class="nav-item" data-page="refer"><i class="fas fa-user-plus"></i><span>Refer</span></a>
+                <a href="#" class="nav-item" data-page="bonus"><i class="fas fa-gift"></i><span>Bonus</span></a>
+                <a href="#" class="nav-item" data-page="withdraw"><i class="fas fa-wallet"></i><span>Withdraw</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-modal-overlay" id="adModal">
+        <div class="ad-modal-content">
+            <p id="adModalTitle">Ad is loading...</p>
+            <div class="spinner" id="adSpinner"></div>
+            <p id="adStatusMessage"></p>
+            <button class="ad-close-btn" id="adCloseBtn" style="display: none;">Close Ad & Claim Reward</button>
+        </div>
+    </div>
+    
+    <div class="warning-popup" id="warningPopup"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <script>
+    //========= START: COMPLETE JAVASCRIPT LOGIC =========//
+
+    // --- 1. FIREBASE & APP CONFIGURATION ---
+    // <<< পরিবর্তিত ফায়ারবেস কনফিগারেশন >>>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCrWhN-Zo4KUEWwbSOqpy4pHRB8Lr8M6kQ",
+      authDomain: "earn-view-cf5b6.firebaseapp.com",
+      databaseURL: "https://earn-view-cf5b6-default-rtdb.firebaseio.com",
+      projectId: "earn-view-cf5b6",
+      storageBucket: "earn-view-cf5b6.firebasestorage.app",
+      messagingSenderId: "560272624342",
+      appId: "1:560272624342:web:2979905c1b873429555777",
+      measurementId: "G-8SXP0YWWMW"
+    };
+
+    let appSettings = {
+        appName: "FREE USDT",
+        pointsPerAd: 50,
+        minWithdrawPoints: 10000,
+        referralBonus: 500, 
+        telegramBotUsername: "YOUR_BOT_USERNAME_HERE",
+        developerTelegramLink: "https://t.me/Hason_of_CEO",
+        withdrawalMethods: ["Bkash", "Nagad"],
+        bonusChannels: [],
+        ads: { rewardedZoneId: null, bannerScript: null, popunderScript: null, socialBarScript: null, nativeBannerScript: null },
+        warningMessage: { text: "", link: "", interval: 99999999 }
+    };
+
+    let currentUser = null, userId = null, userIsGuest = true, adWatchedSuccessfully = false, adRewardPending = false;
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const appContainer = document.querySelector('.app-container');
+    const mainContent = document.getElementById('mainContent');
+    const adModal = document.getElementById('adModal');
+
+    // --- 2. INITIALIZATION SCRIPT ---
+    document.addEventListener('DOMContentLoaded', () => {
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (firebaseUser) {
+                const tg = window.Telegram.WebApp;
+                tg.ready();
+                userId = (tg.initDataUnsafe && tg.initDataUnsafe.user) ? tg.initDataUnsafe.user.id.toString() : firebaseUser.uid;
+                userIsGuest = !(tg.initDataUnsafe && tg.initDataUnsafe.user);
+                loadAppSettingsAndUser(tg.initDataUnsafe || {});
+            } else {
+                firebase.auth().signInAnonymously().catch(error => handleAuthError("Firebase connection failed: " + error.message));
+            }
+        });
+    });
+
+    function handleAuthError(message) {
+        loadingOverlay.innerHTML = `<p style="color:var(--error-color); padding: 20px; text-align:center;">${message}</p>`;
+    }
+    
+    async function loadAppSettingsAndUser(tgData) {
+        try {
+            const settingsSnapshot = await firebase.database().ref('settings').once('value');
+            if (settingsSnapshot.exists()) appSettings = { ...appSettings, ...settingsSnapshot.val() };
+            await loadOrCreateUser(tgData);
+        } catch (error) {
+            handleAuthError("Error loading app data: " + error.message);
+        }
+    }
+
+    async function loadOrCreateUser(tgData) {
+        const userRef = firebase.database().ref('users/' + userId);
+        const snapshot = await userRef.once('value');
+        const tgUser = tgData.user;
+
+        let isNewUser = !snapshot.exists();
+        if (isNewUser) {
+             const referralCode = `TOP${userId.toString().slice(-6)}`;
+             currentUser = {
+                id: userId,
+                username: tgUser ? (tgUser.username || 'N/A') : 'guest',
+                firstName: tgUser ? tgUser.first_name : 'Guest',
+                lastName: tgUser ? (tgUser.last_name || '') : 'User',
+                points: 0, totalAdsWatched: 0,
+                joinedAt: new Date().toISOString(),
+                claimedBonuses: [], status: 'active',
+                referralCode: referralCode,
+                referredBy: null,
+                referralsCount: 0,
+                referralBonusEarned: 0,
+            };
+            await userRef.set(currentUser);
+            await firebase.database().ref(`referralCodes/${referralCode}`).set(userId);
+        } else {
+            currentUser = snapshot.val();
+            if (!currentUser.referralCode) {
+                currentUser.referralCode = `TOP${userId.toString().slice(-6)}`;
+                await userRef.child('referralCode').set(currentUser.referralCode);
+                await firebase.database().ref(`referralCodes/${currentUser.referralCode}`).set(userId);
+            }
+            if (currentUser.referralsCount === undefined) await userRef.child('referralsCount').set(0);
+            if (currentUser.referralBonusEarned === undefined) await userRef.child('referralBonusEarned').set(0);
+        }
+        
+        if (currentUser.status === 'blocked') {
+            handleAuthError("Your account has been blocked by the administrator.");
+            return;
+        }
+        
+        if (isNewUser && tgData.start_param) {
+            await processReferral(tgData.start_param, userId);
+        }
+
+        initializeApp(tgUser);
+    }
+    
+    async function processReferral(referrerCode, newUserId) {
+        const referrerIdSnapshot = await firebase.database().ref(`referralCodes/${referrerCode}`).once('value');
+        if (!referrerIdSnapshot.exists()) {
+            console.log("Referrer code not found:", referrerCode);
+            return;
+        }
+        const referrerId = referrerIdSnapshot.val();
+        if (referrerId === newUserId) {
+            console.log("User cannot refer themself.");
+            return;
+        }
+        
+        const referrerRef = firebase.database().ref(`users/${referrerId}`);
+        const bonusAmount = appSettings.referralBonus || 0;
+
+        await referrerRef.transaction(referrerData => {
+            if (referrerData) {
+                referrerData.points = (referrerData.points || 0) + bonusAmount;
+                referrerData.referralsCount = (referrerData.referralsCount || 0) + 1;
+                referrerData.referralBonusEarned = (referrerData.referralBonusEarned || 0) + bonusAmount;
+            }
+            return referrerData;
+        });
+
+        await firebase.database().ref(`users/${newUserId}/referredBy`).set(referrerId);
+    }
+
+    function initializeApp(tgUser) {
+        loadingOverlay.style.display = 'none';
+        appContainer.style.display = 'flex';
+        
+        applyTheme(localStorage.getItem('topNetworkTheme') || 'light');
+        injectAds();
+        
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateTo(item.dataset.page);
+            });
+        });
+        document.getElementById('adCloseBtn').addEventListener('click', closeAdModalAndReward);
+
+        navigateTo('home');
+        setupWarningMessage();
+        updateUI(tgUser);
+    }
+    
+    function injectScript(containerId, scriptHtml) {
+        if (!scriptHtml) return;
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = scriptHtml;
+        const scriptTag = tempDiv.querySelector('script');
+        if (!scriptTag) return;
+
+        const newScript = document.createElement('script');
+        for (let i = 0; i < scriptTag.attributes.length; i++) {
+            const attr = scriptTag.attributes[i];
+            newScript.setAttribute(attr.name, attr.value);
+        }
+        newScript.innerHTML = scriptTag.innerHTML;
+        
+        container.innerHTML = '';
+        container.appendChild(newScript);
+        container.style.display = 'flex';
+    }
+
+    function injectAds() {
+        if (!appSettings.ads) return;
+        if (appSettings.ads.rewardedZoneId) {
+            const script = document.createElement('script');
+            script.src = `//jagnaimsee.net/vignette.min.js?zone=${appSettings.ads.rewardedZoneId}`;
+            script.dataset.zone = appSettings.ads.rewardedZoneId;
+            script.dataset.sdk = `show_${appSettings.ads.rewardedZoneId}`;
+            document.body.appendChild(script);
+        }
+        injectScript('ad-slot-banner-top', appSettings.ads.bannerScript);
+        injectScript('ad-slot-banner-bottom', appSettings.ads.bannerScript);
+        injectScript('ad-slot-native-banner', appSettings.ads.nativeBannerScript);
+        
+        if (appSettings.ads.popunderScript) injectScriptToBody(appSettings.ads.popunderScript);
+        if (appSettings.ads.socialBarScript) injectScriptToBody(appSettings.ads.socialBarScript);
+    }
+    
+    function injectScriptToBody(scriptHtml) {
+        if (!scriptHtml) return;
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = scriptHtml;
+        const scriptTag = tempDiv.querySelector('script');
+        if (!scriptTag) return;
+        document.body.appendChild(scriptTag);
+    }
+
+    function updateUI(tgUser) {
+        if (!currentUser) return;
+        
+        const profilePic = document.getElementById('profilePic');
+        if (!userIsGuest && tgUser && tgUser.photo_url) {
+            profilePic.src = tgUser.photo_url;
+        } else {
+            profilePic.src = 'https://i.ibb.co/sdc6JgCm/1000069673.jpg';
+        }
+        
+        document.getElementById('profileNameDisplay').innerHTML = `${currentUser.firstName} ${currentUser.lastName} ${!userIsGuest ? '<i class="fas fa-check-circle verified-profile-icon" title="Verified Telegram User"></i>' : ''}`;
+        document.getElementById('userPointsDisplay').innerHTML = `<i class="fas fa-star"></i> ${(currentUser.points || 0).toLocaleString()} Points`;
+        document.getElementById('userAdStatsDisplay').textContent = `Total Ads Watched: ${currentUser.totalAdsWatched || 0}`;
+        document.getElementById('developerFooterDynamicLink').href = appSettings.developerTelegramLink;
+
+        const noticeArea = document.getElementById('dynamic-notice-area');
+        if (appSettings.notice && appSettings.notice.active && appSettings.notice.text) {
+            let noticeHTML = `<div class="task-card"><p>${appSettings.notice.text}</p>`;
+            if (appSettings.notice.imageUrl) {
+                noticeHTML += `<img src="${appSettings.notice.imageUrl}" style="width:100%; border-radius:8px; margin-top:10px;">`;
+            }
+            noticeHTML += `</div>`;
+            noticeArea.innerHTML = noticeHTML;
+            noticeArea.style.display = 'block';
+        } else {
+            noticeArea.style.display = 'none';
+        }
+    }
+
+    function applyTheme(theme) {
+        document.body.classList.toggle('dark-mode', theme === 'dark');
+        document.getElementById('themeToggle').innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        localStorage.setItem('topNetworkTheme', theme);
+    }
+
+    function toggleTheme() {
+        applyTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
+    }
+    
+    function navigateTo(page) {
+        document.querySelectorAll('.bottom-nav .nav-item').forEach(item => item.classList.remove('active'));
+        const activeNavItem = document.querySelector(`.nav-item[data-page="${page}"]`);
+        if (activeNavItem) activeNavItem.classList.add('active');
+        
+        const pageRenderers = {
+            'home': renderHomePage,
+            'tasks': renderTasksPage,
+            'bonus': renderBonusPage,
+            'withdraw': renderWithdrawPage,
+            'refer': renderReferralPage
+        };
+        
+        if(pageRenderers[page]) {
+            pageRenderers[page]();
+        }
+        
+        updateUI(); 
+    }
+
+    function renderHomePage() {
+        mainContent.innerHTML = `
+            <div class="task-card">
+                <h2><i class="fas fa-home"></i> Welcome, ${currentUser.firstName}!</h2>
+                <p>You are part of ${appSettings.appName}. Explore tasks, claim bonuses, and refer friends to earn points.</p>                
+                <p>Your current balance is: <strong><i class="fas fa-star"></i> ${(currentUser.points || 0).toLocaleString()} Points</strong></p>
+            </div>
+            <div class="task-card">
+                <h2><i class="fas fa-bullhorn"></i> System Updates</h2>
+                <p>We've launched our new referral program! Invite your friends and earn ${appSettings.referralBonus} points for each successful referral. Check the 'Refer' tab for your link.</p>
+            </div>`;
+    }
+
+    function renderTasksPage() {
+        const adEnabled = appSettings.ads && appSettings.ads.rewardedZoneId;
+        mainContent.innerHTML = `
+            <div class="task-card">
+                <h2><i class="fas fa-play-circle"></i> Daily Ad Engagements</h2>
+                <p>${adEnabled ? 'Watch rewarded ads to earn points. You can watch unlimited ads!' : 'Sorry, tasks are currently unavailable. Please check back later.'}</p>
+                <button class="task-button" id="watchDailyAdBtn" ${!adEnabled ? 'disabled' : ''}>
+                    <i class="fas fa-eye"></i> Watch Ad (${appSettings.pointsPerAd || 0} Points)
+                </button>
+            </div>`;
+        if(adEnabled) {
+            document.getElementById('watchDailyAdBtn').addEventListener('click', handleWatchDailyAd);
+        }
+    }
+    
+    function renderBonusPage() {
+        const devChannel = { id: 'developer_channel', name: 'Developer Channel', link: appSettings.developerTelegramLink, reward: 100, icon: 'fas fa-user-secret' };
+        let allChannels = [devChannel, ...(appSettings.bonusChannels || [])];
+        let channelsHtml = allChannels.map(channel => {
+           const isClaimed = currentUser.claimedBonuses && currentUser.claimedBonuses.includes(channel.id);
+           return `
+               <li class="channel-item">
+                   <div class="channel-info">
+                       <i class="${channel.icon}"></i>
+                       <span class="channel-name">${channel.name}</span>
+                   </div>
+                   <a href="${channel.link}" target="_blank" class="channel-join-btn ${isClaimed ? 'visited' : ''}" data-channel-id="${channel.id}" data-reward="${channel.reward}" onclick="handleBonusLinkClick(event, this)"> 
+                      ${isClaimed ? 'Claimed' : `Claim ${channel.reward} Points`}
+                   </a>
+               </li>`;
+        }).join('');
+        mainContent.innerHTML = `
+            <div class="task-card">
+                <h2><i class="fas fa-gift"></i> Community Bonus</h2>
+                <p>Join our channels to unlock bonus points. Click to visit, then return here to claim your reward.</p>
+                <ul class="channel-list">${channelsHtml}</ul>
+            </div>`;
+    }
+
+    function renderReferralPage() {
+        const referralLink = `https://t.me/${appSettings.telegramBotUsername}/${appSettings.appName.replace(/\s+/g, '')}?start=${currentUser.referralCode}`;
+        mainContent.innerHTML = `
+            <div class="task-card">
+                <h2><i class="fas fa-user-plus"></i> Invite & Earn</h2>
+                <p>Share your referral link with friends. When they join, you'll receive a bonus of <strong>${appSettings.referralBonus} points!</strong></p>
+                <div class="referral-link-container">
+                    <input type="text" id="referralLinkInput" value="${referralLink}" readonly>
+                    <button class="copy-btn" id="copyReferralBtn"><i class="fas fa-copy"></i></button>
+                </div>
+                <button class="task-button" id="shareReferralBtn"><i class="fab fa-telegram-plane"></i> Share on Telegram</button>
+                <div class="referral-stats">
+                    <div class="stat-box">
+                        <div class="stat-value">${currentUser.referralsCount || 0}</div>
+                        <div class="stat-label">Users Referred</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value"><i class="fas fa-star" style="font-size:0.8em;"></i> ${(currentUser.referralBonusEarned || 0).toLocaleString()}</div>
+                        <div class="stat-label">Bonus Earned</div>
+                    </div>
+                </div>
+            </div>`;
+
+        document.getElementById('copyReferralBtn').addEventListener('click', () => {
+            const input = document.getElementById('referralLinkInput');
+            input.select();
+            document.execCommand('copy');
+            alert('Referral link copied!');
+        });
+        document.getElementById('shareReferralBtn').addEventListener('click', () => {
+             const text = `Join ${appSettings.appName} and earn points! Use my link to get started:`;
+             const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(referralLink)}&text=${encodeURIComponent(text)}`;
+             window.open(shareUrl, '_blank');
+        });
+    }
+    
+    function renderWithdrawPage() {
+        let optionsHtml = (appSettings.withdrawalMethods || []).map(method => `<option value="${method}">${method}</option>`).join('');
+        mainContent.innerHTML = `
+            <div class="task-card">
+                <h2><i class="fas fa-wallet"></i> Withdraw Points</h2>
+                <p>Minimum withdrawal: ${(appSettings.minWithdrawPoints || 0).toLocaleString()} points.</p>
+                <p>Your balance: <strong><i class="fas fa-star"></i> ${(currentUser.points || 0).toLocaleString()} Points</strong></p>
+                <div style="margin-top: 20px;">
+                    <input type="number" id="withdrawAmountInput" placeholder="Amount in points" class="withdraw-input">
+                    <select id="withdrawMethodSelect" class="withdraw-select"><option value="">-- Select Method --</option>${optionsHtml}</select>
+                    <input type="text" id="withdrawAccountInput" placeholder="Account Number / ID" class="withdraw-input">
+                    <button class="task-button" id="submitWithdrawBtn" style="margin-top:10px;"><i class="fas fa-paper-plane"></i> Submit Request</button>
+                    <p id="withdrawStatusMsg" style="text-align:center; margin-top:15px; font-size:0.9em; min-height: 18px;"></p>
+                </div>
+            </div>`;
+        document.getElementById('submitWithdrawBtn').addEventListener('click', handleSubmitWithdrawal);
+    }
+    
+    function handleWatchDailyAd() {
+        adWatchedSuccessfully = false;
+        adRewardPending = true;
+        const adModalTitle = document.getElementById('adModalTitle');
+        const adSpinner = document.getElementById('adSpinner');
+        const adCloseBtn = document.getElementById('adCloseBtn');
+        const adStatusMessage = document.getElementById('adStatusMessage');
+
+        adModal.classList.add('show');
+        adModalTitle.textContent = "Loading Rewarded Ad...";
+        adSpinner.style.display = 'block';
+        adCloseBtn.style.display = 'none';
+        adStatusMessage.textContent = "Please wait for the ad to start...";
+        
+        const adFunctionName = `show_${appSettings.ads.rewardedZoneId}`;
+        if (typeof window[adFunctionName] === 'function') {
+             window[adFunctionName]().then(() => {
+                if (adRewardPending) {
+                    adModalTitle.textContent = "Ad Completed!";
+                    adSpinner.style.display = 'none';
+                    adStatusMessage.textContent = "You can now close this window to claim your reward.";
+                    adCloseBtn.style.display = 'block';
+                    adWatchedSuccessfully = true;
+                }
+            }).catch(() => { handleAdError("Ad failed to show or was closed early."); });
+        } else { handleAdError(`Ad function not found. Please try again later.`); }
+    }
+
+    function handleAdError(errorMessage) {
+        if(adRewardPending) {
+            const adModalTitle = document.getElementById('adModalTitle');
+            const adSpinner = document.getElementById('adSpinner');
+            const adCloseBtn = document.getElementById('adCloseBtn');
+            const adStatusMessage = document.getElementById('adStatusMessage');
+            adSpinner.style.display = 'none';
+            adStatusMessage.textContent = errorMessage + " (No points awarded)";
+            adModalTitle.textContent = "Ad Error";
+            adCloseBtn.textContent = "Close";
+            adCloseBtn.style.display = 'block';
+            adWatchedSuccessfully = false; 
+        }
+    }
+
+    function closeAdModalAndReward() {
+        adModal.classList.remove('show');
+        if (adWatchedSuccessfully && adRewardPending) {
+            const rewardAmount = appSettings.pointsPerAd || 0;
+            const updates = {
+                [`/users/${userId}/points`]: firebase.database.ServerValue.increment(rewardAmount),
+                [`/users/${userId}/totalAdsWatched`]: firebase.database.ServerValue.increment(1)
+            };
+            firebase.database().ref().update(updates).then(() => {
+                currentUser.points = (currentUser.points || 0) + rewardAmount;
+                currentUser.totalAdsWatched = (currentUser.totalAdsWatched || 0) + 1;
+                updateUI();
+                alert(`Congratulations! +${rewardAmount} points have been added.`);
+            }).catch(error => { alert("Failed to save points. Error: " + error.message); });
+        }
+        adRewardPending = false; 
+        adWatchedSuccessfully = false;
+    }
+
+    function handleBonusLinkClick(event, buttonElement) {
+        event.preventDefault();
+        const channelId = buttonElement.dataset.channelId;
+        const reward = parseInt(buttonElement.dataset.reward);
+
+        if (currentUser.claimedBonuses && currentUser.claimedBonuses.includes(channelId)) return;
+        
+        window.open(buttonElement.href, '_blank');
+        buttonElement.textContent = 'Verifying...';
+        buttonElement.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+            firebase.database().ref(`users/${userId}/claimedBonuses`).transaction(bonuses => {
+                bonuses = bonuses || [];
+                if (bonuses.includes(channelId)) return;
+                bonuses.push(channelId);
+                return bonuses;
+            }).then(result => {
+                if (result.committed) {
+                    firebase.database().ref(`users/${userId}/points`).transaction(points => (points || 0) + reward)
+                    .then(() => {
+                        currentUser.points = (currentUser.points || 0) + reward;
+                        currentUser.claimedBonuses = result.snapshot.val();
+                        updateUI();
+                        buttonElement.textContent = 'Claimed';
+                        buttonElement.classList.add('visited');
+                        alert(`${reward} bonus points claimed successfully!`);
+                    });
+                }
+            });
+        }, 5000); 
+    }
+
+    function handleSubmitWithdrawal() {
+        const amount = parseInt(document.getElementById('withdrawAmountInput').value);
+        const method = document.getElementById('withdrawMethodSelect').value;
+        const account = document.getElementById('withdrawAccountInput').value.trim();
+        const statusMsg = document.getElementById('withdrawStatusMsg');
+        
+        statusMsg.style.color = 'var(--error-color)'; 
+        if (isNaN(amount) || amount <= 0) { statusMsg.textContent = "Please enter a valid amount."; return; }
+        if (amount < appSettings.minWithdrawPoints) { statusMsg.textContent = `Minimum withdrawal is ${appSettings.minWithdrawPoints} points.`; return; }
+        if (amount > (currentUser.points || 0)) { statusMsg.textContent = "You have insufficient points."; return; }
+        if (!method) { statusMsg.textContent = "Please select a payment method."; return; }
+        if (!account) { statusMsg.textContent = "Please enter your account details."; return; }
+
+        const newPoints = (currentUser.points || 0) - amount;
+        const withdrawalRequest = {
+            userId: userId, username: currentUser.username, userName: `${currentUser.firstName} ${currentUser.lastName}`,
+            points: amount, method: method, account: account, status: 'pending', requestedAt: firebase.database.ServerValue.TIMESTAMP
+        };
+        const newRequestKey = firebase.database().ref().child('withdrawals').push().key;
+        const updates = {
+            [`/users/${userId}/points`]: newPoints,
+            [`/withdrawals/${newRequestKey}`]: withdrawalRequest
+        };
+        firebase.database().ref().update(updates).then(() => {
+            currentUser.points = newPoints;
+            updateUI();
+            statusMsg.textContent = "Withdrawal request submitted successfully!";
+            statusMsg.style.color = 'var(--success-color)';
+            document.getElementById('withdrawAmountInput').value = '';
+            document.getElementById('withdrawAccountInput').value = '';
+        }).catch(error => { statusMsg.textContent = "Error submitting request: " + error.message; });
+    }
+
+    function setupWarningMessage() {
+        const popup = document.getElementById('warningPopup');
+        const config = appSettings.warningMessage;
+        if (!popup || !config || !config.text || !config.link) return;
+        popup.innerText = config.text;
+        popup.addEventListener('click', () => { window.open(config.link, '_blank'); popup.classList.remove('show'); });
+        setInterval(() => { popup.classList.add('show'); setTimeout(() => popup.classList.remove('show'), 4000); }, config.interval);
+    }
+    </script>
+</body>
+</html>
